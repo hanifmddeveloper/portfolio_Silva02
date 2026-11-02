@@ -4,7 +4,7 @@ Allow: /
 Disallow: /private/*
 
 # Host
-Host: https://portfoliofive.reactbd.com
+Host: https://portfolio-new-seven-opal.vercel.app
 
 # Sitemaps
-Sitemap: https://portfoliofive.reactbd.com/sitemap.xml
+Sitemap: https://portfolio-new-seven-opal.vercel.app/sitemap.xml

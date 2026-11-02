@@ -6,6 +6,12 @@ import StairTransition from "@/components/StairTransition";
 import { Toaster } from "@/components/ui/toaster";
 import Script from "next/script";
 
+const siteUrl =
+  process.env.SITE_URL ||
+  (process.env.VERCEL_URL
+    ? `https://${process.env.VERCEL_URL}`
+    : "https://portfolio-new-seven-opal.vercel.app");
+
 export const metadata: Metadata = {
   title: "Silva Sarwar | Graphic & UI/UX Designer",
   description:
@@ -14,15 +20,16 @@ export const metadata: Metadata = {
     "graphic designer, UI/UX designer, Silva Sarwar, portfolio, design, branding, web design",
   authors: [{ name: "Silva Sarwar" }],
   robots: "index, follow",
+  metadataBase: new URL(siteUrl),
   openGraph: {
     type: "website",
-    url: "https://portfoliofive.reactbd.com/",
+    url: siteUrl,
     title: "Silva Sarwar | Graphic & UI/UX Designer",
     description:
       "Discover Silva Sarwar's portfolio showcasing creative design, user experience, and digital branding work.",
     images: [
       {
-        url: "https://portfoliofive.reactbd.com/assets/og-image.jpg",
+        url: "/readme.png",
         width: 1200,
         height: 630,
         alt: "Silva Sarwar Portfolio Preview",
@@ -35,10 +42,10 @@ export const metadata: Metadata = {
     title: "Silva Sarwar | Graphic & UI/UX Designer",
     description:
       "Check out Silva Sarwar's portfolio for graphic design, UI/UX, and digital branding projects.",
-    images: ["https://portfoliofive.reactbd.com/assets/og-image.jpg"],
+    images: ["/readme.png"],
   },
   alternates: {
-    canonical: "https://portfoliofive.reactbd.com/",
+    canonical: siteUrl,
   },
   other: {
     "theme-color": "#000000",
@@ -79,11 +86,11 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "WebSite",
               name: "Silva Sarwar Portfolio",
-              url: "https://portfoliofive.reactbd.com/",
+              url: siteUrl,
               potentialAction: {
                 "@type": "SearchAction",
                 target:
-                  "https://portfoliofive.reactbd.com/search?q={search_term_string}",
+                  `${siteUrl}/search?q={search_term_string}`,
                 "query-input": "required name=search_term_string",
               },
             }),

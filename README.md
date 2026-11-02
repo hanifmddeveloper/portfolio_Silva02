@@ -43,14 +43,22 @@ npm run dev
 
 ## Deployment
 
-Deploy effortlessly to Vercel:
+### Deploy to Vercel
+
+1. Push this repository to GitHub and import it in [Vercel](https://vercel.com/new).
+2. Keep the project root as the Root Directory and let Vercel detect Next.js.
+3. Use the default install and build settings (`npm install` and `npm run build`).
+4. Optionally add `SITE_URL` in Vercel Project Settings → Environment Variables. Set it to your public site origin (for example, `https://your-domain.com`) and apply it to Production. Vercel deployment URLs are used automatically for previews.
+5. Deploy. The existing `postbuild` script generates `sitemap.xml` and `robots.txt`.
+
+No `vercel.json` or additional build configuration is required.
+
+To test the production build locally:
 
 ```shell
 npm run build
 npm run start
 ```
-
-Or connect your GitHub repository to Vercel for automatic deployments.
 
 ## Technologies Used
 
